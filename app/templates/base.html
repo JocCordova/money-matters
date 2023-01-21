@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--primary-color); color: var(--light-gray);">
+      <a class="navbar-brand" href="#">Money Matters</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{{ url_for('income') }}">Income</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{{ url_for('expense') }}">Expense</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{{ url_for('investment') }}">Investment</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{{ url_for('reminder') }}">Reminder</a>
+</li>
+</ul>
+</div>
+</nav>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {% for message in get_flashed_messages() %}
+            <div class="alert alert-danger">{{ message }}</div>
+            {% endfor %}
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>
+    {% block page %}{% endblock %}
+<footer class="page-footer font-small" style="background-color: var(--primary-color); color: var(--light-gray);">
+    <div class="footer-copyright text-center py-3">Copyright ©2022:
+    <a href="#"> Money Matters</a>
+  </div>
+</footer>
+    <script>
+      anime({targets: '.navbar-light',
+backgroundColor: 'var(--primary-color)',
+color: 'var(--light-gray)',
+duration: 2000,
+loop: true,
+direction: 'alternate',
+easing: 'easeInOutSine'
+});
+</script>
+
+  </body>
+</html>

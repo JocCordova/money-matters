@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+{% block content %}
+    <div class="container">
+      <h1 class="text-center my-5">Welcome to Money Matters</h1>
+      <div class="text-center">
+        <a href="{{ url_for('dashboard') }}" class="btn btn-lg mx-2" style="background-color: var(--accent-color-light-green); color: #fff;">Dashboard</a>
+        <a href="{{ url_for('income') }}" class="btn btn-lg mx-2" style="background-color: var(--accent-color-teal); color: #fff;">Income</a>
+        <a href="{{ url_for('expense') }}" class="btn btn-lg mx-2" style="background-color: var(--accent-color-deep-orange); color: #fff;">Expense</a>
+        <a href="{{ url_for('investment') }}" class="btn btn-lg mx-2" style="background-color: var(--accent-color-lime); color: #fff;">Investment</a>
+        <a href="{{ url_for('reminder') }}" class="btn btn-lg mx-2" style="background-color: var(--accent-color-amber); color: #fff;">Reminder</a>
+      </div>
+    </div>
+{% endblock %}

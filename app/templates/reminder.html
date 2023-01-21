@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} Reminders {% endblock %}
+{% block content %}
+    <div class="container my-5">
+      <h1 class="text-center">Reminders</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="font-weight-bold">Title</th>
+            <th class="font-weight-bold">Description</th>
+            <th class="font-weight-bold">Due Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for reminder in reminders %}
+          <tr>
+            <td>{{ reminder.title }}</td>
+            <td>{{ reminder.description }}</td>
+            <td>{{ reminder.due_date }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+{% endblock %}

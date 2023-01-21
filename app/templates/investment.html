@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %} Investments {% endblock %}
+{% block content %}
+    <div class="container my-5">
+      <h1 class="text-center">Investments</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="font-weight-bold">Amount</th>
+            <th class="font-weight-bold">Category</th>
+            <th class="font-weight-bold">Description</th>
+            <th class="font-weight-bold">Timestamp</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for investment in investments %}
+          <tr>
+            <td>{{ investment.amount }}</td>
+            <td>{{ investment.category }}</td>
+            <td>{{ investment.description }}</td>
+            <td>{{ investment.timestamp }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+{% endblock %}
