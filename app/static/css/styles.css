@@ -1,0 +1,29 @@
+:root {
+  --primary-color: #4CAF50;
+  --light-gray: #F5F5F5;
+  --accent-color-light-green: #8BC34A;
+  --accent-color-teal: #009688;
+  --accent-color-lime-green: #00E676;
+  --accent-color-lime: #CDDC39;
+  --accent-color-amber: #FFC107;
+  --accent-color-deep-orange: #FF5722;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--light-gray);
+}
+
+.btn {
+  background-color: var(--accent-color-light-green);
+  color: #fff;
+}
+
+.text-center {
+  color: var(--light-gray);
+  align-content: center;
+}
+
+table {
+  background-color: var(--accent-color-light-green);
+}
